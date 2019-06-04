@@ -28,7 +28,11 @@ By default, the degree delta is `20`° and the floor normal is world `Vector3.up
 
 ### Simple Floor Visualizer
 
-<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/simple-floor-visualizer-example.png" alt="Simple floor visualizer." width="392" height="294" />
+<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/simple-floor-visualizer-example.png" alt="Simple Floor Visualizer." width="392" height="294" />
+
+### Spatial Mapper Meshing Wireframe
+
+<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/spatial-mapper-meshing-wireframe-example.png" alt="Spatial Mapper Wireframe Occlusion." width="392" height="294" />
 
 ### Spatial Mapper Meshing Occlusion
 
@@ -36,7 +40,7 @@ In this example, the spatial mapper meshing visualizer is not actually rendering
 
 Vertex 'discarding' is done in the vertex program by performing an invalid operation on the vertex position (division by zero). This behaviour is undefined but works in OpenGL ES and OpenGL Core and is much more performant than a true `discard` in the fragment program because it avoids a branching operation.
 
-<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/meshing-occlusion-example.png" alt="Meshing occlusion." width="392" height="294" />
+<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/spatial-mapper-meshing-occlusion-example.png" alt="Spatial Mapper Meshing Occlusion." width="392" height="294" />
 
 ## License
 

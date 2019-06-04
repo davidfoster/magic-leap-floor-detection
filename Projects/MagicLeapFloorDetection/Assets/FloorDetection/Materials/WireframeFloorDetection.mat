@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WireframeFloorDetection
-  m_Shader: {fileID: 4800000, guid: 51a7e8ea0f3d58c4ab2ef6ca0e50c4ab, type: 3}
+  m_Shader: {fileID: 4800000, guid: 94a8f23268474ff46bd062404f950912, type: 3}
   m_ShaderKeywords: _EMISSION _GLOSSYREFLECTIONS_OFF _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -20,7 +20,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _FloorAngleMaxDelta: 20
     - _FloorNormalAngleMaxDelta: 20
     - _WireThickness: 100
     m_Colors:

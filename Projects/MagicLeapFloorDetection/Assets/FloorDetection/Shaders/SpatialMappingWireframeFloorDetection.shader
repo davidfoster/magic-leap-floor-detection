@@ -1,7 +1,7 @@
 Shader "David Foster/Spatial Mapping Wireframe (Floor Detection)" {
 	Properties {
 		_WireThickness ("Wire Thickness", RANGE(0, 800)) = 100
-		_WorldColour("World Colour", Color) = (1, 1, 1, 1)
+		_WorldColour("World Colour", Color) = (0.5, 0.5, 0.5, 1)
 		_HorizontalSurfaceColour("Horizontal Surface Colour", Color) = (1, 1, 0, 1)
 		_FloorColour("Floor Colour", Color) = (0, 1, 0, 1)
 		_FloorNormalAngleMaxDelta("Floor Normal Angle Max Delta", Range(0, 90)) = 20
