@@ -24,7 +24,7 @@ To use this example, either (in order of simplicity):
 
 ### 1. Simple Floor Visualiser
 
-[[/images/1-simple-floor-visualiser-example.png|Simple floor visualiser example.]]
+![](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/images/1-simple-floor-visualiser-example.png =392x294)
 
 
 ## License
