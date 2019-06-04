@@ -32,7 +32,11 @@ By default, the degree delta is `20`° and the floor normal is world `Vector3.up
 
 ### Spatial Mapper Meshing Wireframe
 
-<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/spatial-mapper-meshing-wireframe-example.png" alt="Spatial Mapper Wireframe Occlusion." width="392" height="294" />
+<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/spatial-mapper-meshing-wireframe-example.png" alt="Spatial Mapper Meshing Wireframe." width="392" height="294" />
+
+### Spatial Mapper Meshing Point Cloud
+
+<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/spatial-mapper-meshing-point-cloud-example.png" alt="Spatial Mapper Meshing Point Cloud." width="392" height="294" />
 
 ### Spatial Mapper Meshing Occlusion
 

@@ -76,10 +76,8 @@ Shader "David Foster/Simple Floor Visualizer" {
 				float distance = dot(i.worldPos, _FloorPlane.xyz);
 				distance = distance + _FloorPlane.w;
 
-				// now lerp between world, horizontal surface, and floor colour, based on whether height and normal delta match.
-				fixed4 col = lerp(_WorldColour, lerp(_HorizontalSurfaceColour, _FloorColour, step(distance, 0)), step(floorPlaneNormalDeltaDegrees, _FloorNormalAngleMaxDelta));
-
-				return col;
+				// return lerp between world, horizontal surface, and floor colour, based on whether height and normal delta match.
+				return lerp(_WorldColour, lerp(_HorizontalSurfaceColour, _FloorColour, step(distance, 0)), step(floorPlaneNormalDeltaDegrees, _FloorNormalAngleMaxDelta));
 			}
 			ENDCG
 		}
