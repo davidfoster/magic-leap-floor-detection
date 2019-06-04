@@ -14,8 +14,8 @@ All Magic Leap code and content is .gitignored so as to abide by the terms of th
 
 To use this example, either (in order of simplicity):
 
-1. Import [_Packages/Magic Leap Floor Detection.unitypackage_](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Packages/MagicLeapFloorDetection.unitypackage) into an existing ML project.
-2. Import the ML package included with the SDK into the project under [_Projects/MagicLeapFloorDetection_](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Projects/MagicLeapFloorDetection), then import ML Remote support libraries (_Magic Leap > ML Remote > Import Support Libraries_ menu item inside of Unity).
+1. Import the [Magic Leap Floor Detection.unitypackage](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Packages/MagicLeapFloorDetection.unitypackage) into an existing ML project.
+2. Import the ML package included with the SDK into the project under [_Projects/MagicLeapFloorDetection_](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Projects/MagicLeapFloorDetection), then import ML Remote support libraries ("_Magic Leap > ML Remote > Import Support Libraries_" menu item inside of Unity).
 
 ## License
 
