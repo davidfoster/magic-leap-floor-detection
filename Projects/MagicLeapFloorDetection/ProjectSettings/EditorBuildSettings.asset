@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/FloorDetection/Scenes/FloorDetection.unity
+    guid: c515d7f0f700e7a488ad783c75ac3667
   m_configObjects: {}
