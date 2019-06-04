@@ -22,9 +22,9 @@ To use this example, either (in order of simplicity):
 
 ## Examples
 
-In the below examples, vertices are rendered in yellow whose normals fall within a specified degree delta of the floor normal. Of those vertices, those who fall below the detected floor y are considered to be a part of the floor, and are rendered in green.
+In these examples, vertices are rendered in yellow whose normals fall within a specified degree delta of the floor normal. Of those vertices, those who fall below the detected floor y are considered to be a part of the floor, and are rendered in green.
 
-By default, the degree delta is `20`° and the floor normal is world `Vector3.up`. The rendered detected floor y also includes an error margin (default: `0.05`) to envelop noise in the spatial map which falls just above the de facto detected floor y but should still be considered a part of the floor.
+By default, the degree delta is `20`° and the floor normal is world `Vector3.up`. The rendered detected floor y also includes an error margin (default: `0.05`) to envelop noise in the spatial map which falls just above the de facto detected floor y and should still be considered a part of the floor.
 
 ### Simple Floor Visualizer
 
