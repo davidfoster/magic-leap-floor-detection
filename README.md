@@ -22,6 +22,8 @@ To use this example, either (in order of simplicity):
 
 ## Examples
 
+In the below examples, vertices whose normals fall within a specified degree delta (default: 20°) of the floor normal (world up) are rendered in yellow. Of those vertices, those who fall below the detected floor y (or within an error margin \[default: 0.05\]) are considered to be the floor, and are rendered in green.
+
 ### Simple Floor Visualizer
 
 <img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/images/simple-floor-visualizer-example.png" alt="Simple floor visualizer." width="392" height="294" />
