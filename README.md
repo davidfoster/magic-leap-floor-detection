@@ -17,6 +17,7 @@ All Magic Leap code and content is .gitignored so as to abide by the terms of th
 To use this example, either (in order of simplicity):
 
 1. Import [MagicLeapFloorDetection.unitypackage](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Packages/MagicLeapFloorDetection.unitypackage) into an existing ML Unity project.
+   * Make sure the API Compatibility Level under _Project Settings > Player > Other Settings_ is set to **.NET 4x**. Sorry if this is annoying; I'm now addicted to that deliciously sweet C# 7 syntactic sugar.
 2. Import the ML Unity package included with the SDK into the project under [_Projects/MagicLeapFloorDetection_](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Projects/MagicLeapFloorDetection), then import ML Remote support libraries ("_Magic Leap > ML Remote > Import Support Libraries_" menu item inside of Unity).
    * Make sure the Lumin platform is active in Build Settings or you will receive a "No ML VRDevice loaded" error.
 
