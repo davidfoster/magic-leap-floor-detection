@@ -2,11 +2,20 @@
 
 Detect and display the floor in Magic Leap Unity projects with this expansion to the ML SDK Meshing example scene.
 
-## Important
+## Dependencies
 
-No Magic Leap code is included in this repo. All ML content is .gitignored so as to abide by the terms of the Independent Creator Program.
+* Lumin SDK v0.20.0.
+* Magic Leap Unity® Package v0.20.0.
+* Unity 2019.1.5f1 with Lumin OS (Magic Leap) Build Support.
 
-To use this example, either import the ML package included with the SDK into the project under _Projects/Floor Detection_ (and import MLRemote support libraries), or import the package included in this repo (under _Packages/Magic Leap Floor Detection.unitypackage_) into an existing ML project.
+## How to Use
+
+All Magic Leap code and content is .gitignored so as to abide by the terms of the Independent Creator Program.
+
+To use this example, either (in order of simplicity):
+
+1. Import [_Packages/Magic Leap Floor Detection.unitypackage_](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Packages/MagicLeapFloorDetection.unitypackage) into an existing ML project.
+2. Import the ML package included with the SDK into the project under _Projects/MagicLeapFloorDetection_, then import MLRemote support libraries.
 
 ## License
 
