@@ -22,9 +22,9 @@ To use this example, either (in order of simplicity):
 
 ## Example
 
-### Simple Floor Visualiser
+### Simple Floor Visualizer
 
-<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/images/1-simple-floor-visualiser-example.png" alt="Simple floor visualiser." width="392" height="294" />
+<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/images/simple-floor-visualizer-example.png" alt="Simple floor visualizer." width="392" height="294" />
 
 ## License
 

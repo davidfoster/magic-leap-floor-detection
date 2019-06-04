@@ -1,4 +1,4 @@
-Shader "David Foster/Simple Floor Visualiser" {
+Shader "David Foster/Simple Floor Visualizer" {
 	Properties {
 		_WorldColour("World Colour", Color) = (0.5, 0.5, 0.5, 1)
 		_HorizontalSurfaceColour("Horizontal Surface Colour", Color) = (1, 1, 0, 1)
