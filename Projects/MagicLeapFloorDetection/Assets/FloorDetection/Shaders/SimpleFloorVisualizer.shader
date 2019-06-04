@@ -7,13 +7,6 @@ Shader "David Foster/Simple Floor Visualizer" {
 	}
 
 	SubShader {
-
-		// render the Occlusion shader before all opaque geometry to prime the depth buffer.
-		Tags { "Queue"="Geometry-1" }
-
-		ZWrite On
-		ZTest LEqual
-
 		Pass {
 			CGPROGRAM
 			#pragma vertex vert
