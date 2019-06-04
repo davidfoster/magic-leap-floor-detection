@@ -20,6 +20,12 @@ To use this example, either (in order of simplicity):
 2. Import the ML Unity package included with the SDK into the project under [_Projects/MagicLeapFloorDetection_](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Projects/MagicLeapFloorDetection), then import ML Remote support libraries ("_Magic Leap > ML Remote > Import Support Libraries_" menu item inside of Unity).
    * Make sure the Lumin platform is active in Build Settings or you will receive a "No ML VRDevice loaded" error.
 
+## Example
+
+### 1. Simple Floor Visualiser
+
+[[/images/1-simple-floor-visualiser-example.png|Simple floor visualiser example.]]
+
 
 ## License
 
