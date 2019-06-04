@@ -2,7 +2,7 @@
 
 Detect and display the floor in Magic Leap Unity projects with this expansion to the ML SDK Meshing example scene.
 
-## Important Note
+## Important
 
 No Magic Leap code is included in this repo. All ML content is .gitignored so as to abide by the terms of the Independent Creator Program.
 
