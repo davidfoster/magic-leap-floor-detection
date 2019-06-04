@@ -1,0 +1,7 @@
+!.gitignore
+Builds/*
+!Builds/*AppData.bat
+!Builds/*output_log.txt.bat
+Logs/*
+UnitySDK.log
+.out/*
