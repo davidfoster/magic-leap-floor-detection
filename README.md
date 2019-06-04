@@ -30,9 +30,9 @@ By default, the degree delta is `20`° and the floor normal is world `Vector3.up
 
 <img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/simple-floor-visualizer-example.png" alt="Simple floor visualizer." width="392" height="294" />
 
-### Meshing Occlusion
+### Spatial Mapper Meshing Occlusion
 
-In this example, the spatial map meshing visualizer is not actually rendering the green. The green is coming from a separate quad located under the world. Because the meshing visualizer in occlusion mode renders vertices with ZWrite On, we actually want to discard vertices considered to be belonging to the floor so they do not write to the depth buffer and therefore occlude objects under the floor.
+In this example, the spatial mapper meshing visualizer is not actually rendering the green. The green is coming from a separate quad located under the world. Because the meshing visualizer in occlusion mode renders pixels to the depth buffer (`ZWrite On`), we actually want to discard vertices considered to be belonging to the floor so they do not occlude objects under the floor.
 
 Vertex 'discarding' is done in the vertex program by performing an invalid operation on the vertex position (division by zero). This behaviour is undefined but works in OpenGL ES and OpenGL Core and is much more performant than a true discard in the fragment shader because it avoids a branching operation.
 
