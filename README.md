@@ -1,4 +1,4 @@
-# Magic Leap Floor Detection
+# Magic Leap Floor Detection ![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)
 
 Detect and display the floor in Magic Leap Unity projects with this expansion to the ML SDK Meshing example scene.
 
@@ -10,4 +10,4 @@ To use this example, either import the ML package included with the SDK into the
 
 ## License
 
-MIT.
+This project is licensed under the [MIT license](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/LICENSE).
