@@ -8,6 +8,8 @@ Detect and display the floor in Magic Leap Unity projects with this expansion to
 * Magic Leap Unity® Package v0.20.0.
 * Unity 2019.1.5f1 with Lumin OS (Magic Leap) Build Support.
 
+It will likely work in other versions of Unity 2019, but I make no guarantees. 😎
+
 ## How to Use
 
 All Magic Leap code and content is .gitignored so as to abide by the terms of the Independent Creator Program.
