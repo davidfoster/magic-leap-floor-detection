@@ -58,7 +58,7 @@ public class FloorDetectionController : MonoBehaviour {
 
 	protected void Awake() {
 
-		// set our scale to determine bounds used by Magic Leap planes API.
+		// set our scale to determine bounds used by Magic Leap Planes API.
 		transform.localScale = Vector3.one * boundsSize;
 	}
 
