@@ -46,7 +46,7 @@ Vertex 'discarding' is done in the vertex program by performing an invalid opera
 
 <img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/spatial-mapper-meshing-occlusion-example.png" alt="Spatial Mapper Meshing Occlusion." width="392" height="294" />
 
-N.B. aforementioned vertex discarding is purely visual; floor mesh colliders are present despite floor occlusion not rendering.
+N.B.: aforementioned vertex discarding is purely visual; floor mesh colliders are present despite floor occlusion not rendering.
 
 ## Gotchas
 
