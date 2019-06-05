@@ -138,7 +138,7 @@ Shader "David Foster/Spatial Mapping Wireframe (Floor Detection)" {
 				// work out the angle delta between our fragment normal and the plane normal.
 				float floorPlaneNormalDeltaDegrees = degrees(acos(dot(i.normal, _FloorPlane.xyz)));
 
-				// calculate signed distance to plane and set alpha based on that.
+				// calculate signed distance to floor plane.
 				float distance = dot(i.worldSpacePosition, _FloorPlane.xyz);
 				distance = distance + _FloorPlane.w;
 
