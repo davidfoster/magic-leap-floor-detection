@@ -48,7 +48,7 @@ Vertex 'discarding' is done in the vertex program by performing an invalid opera
 
 ## Gotchas
 
-* When using the ML Remote simulator, floor meshes in particular are generated with vertices whose normal magnitude is `0.01`. We can easily account for this (and have) in each shader but it adds an extra `normalize` operation and, consequently, a square root. Although [square roots are two orders of magnitude faster GPU-side](http://supercomputingblog.com/cuda/performance-of-sqrt-in-cuda/), I'll keep an eye on updates to the Lumin SDK which might render this operation redundant. A bug report has been filed with Magic Leap.
+* When using the ML Remote simulator, floor meshes in particular are generated with normals of magnitude `0.01`. We can easily account for this (and have) in each shader but it adds an extra `normalize` operation and, possibly, a square root. I say 'possibly' because [some graphics library implementations](https://developer.download.nvidia.com/cg/normalize.html) use a reverse square root on the dot product of the vector to avoid a square root. Even if it _does_ perform a square root, [square roots are two orders of magnitude faster GPU-side](http://supercomputingblog.com/cuda/performance-of-sqrt-in-cuda/), so it's not awful. But I'll keep an eye on updates to the Lumin SDK which might render this operation redundant. A bug report has been filed with Magic Leap.
 
 ## License
 
