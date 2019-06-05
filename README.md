@@ -52,7 +52,7 @@ N.B. aforementioned vertex discarding is purely visual; floor mesh colliders are
 
 * When using the ML Remote simulator, floor meshes in particular are generated with normals of magnitude `0.01`. We can easily account for this (and have) in each shader but it adds an extra `normalize` operation and, likely, a square root. Even if we are performing a square root, [square roots are two orders of magnitude faster GPU-side](http://supercomputingblog.com/cuda/performance-of-sqrt-in-cuda/), so it's not _that_ bad. I'll keep an eye on updates to the Lumin SDK which might render this operation redundant. A bug report has been filed with Magic Leap.
    *  I say 'likely' a square root because some graphics math libraries use an inverse square root on the dot product of the vector to approximate magnitude while avoiding a square root and a division.
-   * For more supplementary fun on this topic, see the legendary [Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root).
+   * For more supplementary fun on this topic, see the legendary [Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root), and [this explanation](http://h14s.p5r.org/2012/09/0x5f3759df-appendix.html).
 
 ## Limitations
 
