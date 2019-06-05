@@ -53,6 +53,11 @@ N.B. aforementioned vertex discarding is purely visual; floor mesh colliders are
 * When using the ML Remote simulator, floor meshes in particular are generated with normals of magnitude `0.01`. We can easily account for this (and have) in each shader but it adds an extra `normalize` operation and, likely, a square root. I say 'likely' because _some_ graphics math libraries use an inverse square root on the dot product of the vector to approximate magnitude while avoiding a square root and a division. Even if we are performing a square root, [square roots are two orders of magnitude faster GPU-side](http://supercomputingblog.com/cuda/performance-of-sqrt-in-cuda/), so it's not _that_ bad. I'll keep an eye on updates to the Lumin SDK which might render this operation redundant. A bug report has been filed with Magic Leap.
    * For more supplementary fun on this topic, see the legendary [Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root).
 
+## Limitations
+
+* This implementation is naive in that it necessarily assumes that the floor has a uniform surface tangent and consistent vertical position. This approach will work well in most situations (even situations where the floor is uneven but averages out well) but will fail in some such as near stairs or on sloped surfaces.
+   * One approach to remedy this limitation is to scattergun ML Raycast API calls and construct a new mesh based on smoothed contact points, then pass this into each shader. That said, at least in my investigations, relying fully on Raycast/Meshing APIs for floor position will lead to small error drifts above actual floor position.
+
 ## License
 
 This project is licensed under the [MIT license](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/LICENSE).
