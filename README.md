@@ -46,11 +46,11 @@ Vertex 'discarding' is done in the vertex program by performing an invalid opera
 
 <img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/spatial-mapper-meshing-occlusion-example.png" alt="Spatial Mapper Meshing Occlusion." width="392" height="294" />
 
-N.B. the aforementioned vertex discarding is purely visual; floor mesh colliders still work despite floor occlusion not rendering.
+N.B. aforementioned vertex discarding is purely visual; floor mesh colliders are present despite floor occlusion not rendering.
 
 ## Gotchas
 
-* When using the ML Remote simulator, floor meshes in particular are generated with normals of magnitude `0.01`. We can easily account for this (and have) in each shader but it adds an extra `normalize` operation and, likely, a square root. I say 'likely' because _some_ graphics math libraries use an inverse square root on the dot product of the vector to approximate magnitude while avoiding a square root and a division. Even if it does perform a square root, [square roots are two orders of magnitude faster GPU-side](http://supercomputingblog.com/cuda/performance-of-sqrt-in-cuda/), so it's not awful. I'll keep an eye on updates to the Lumin SDK which might render this operation redundant. A bug report has been filed with Magic Leap.
+* When using the ML Remote simulator, floor meshes in particular are generated with normals of magnitude `0.01`. We can easily account for this (and have) in each shader but it adds an extra `normalize` operation and, likely, a square root. I say 'likely' because _some_ graphics math libraries use an inverse square root on the dot product of the vector to approximate magnitude while avoiding a square root and a division. Even we do perform a square root, [square roots are two orders of magnitude faster GPU-side](http://supercomputingblog.com/cuda/performance-of-sqrt-in-cuda/), so it's not awful. I'll keep an eye on updates to the Lumin SDK which might render this operation redundant. A bug report has been filed with Magic Leap.
    * For more supplementary fun on this topic, see the legendary [Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root).
 
 ## License
