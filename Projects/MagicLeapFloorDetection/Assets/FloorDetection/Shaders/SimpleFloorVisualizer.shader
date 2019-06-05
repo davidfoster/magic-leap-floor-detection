@@ -20,6 +20,7 @@ Shader "David Foster/Simple Floor Visualizer" {
 
 			uniform float _FloorNormalAngleMaxDelta;
 
+			// global floor plane property.
 			uniform float4 _FloorPlane;
 
 			struct appdata {

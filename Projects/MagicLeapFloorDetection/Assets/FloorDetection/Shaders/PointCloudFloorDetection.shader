@@ -27,6 +27,7 @@ Shader "David Foster/Point Cloud (Floor Detection)" {
 
 			uniform float _FloorNormalAngleMaxDelta;
 
+			// global floor plane property.
 			uniform float4 _FloorPlane;
 
 			struct appdata {
