@@ -20,7 +20,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _FloorNormalAngleMaxDelta: 20
     - _FloorPointSize: 10
     - _HorizontalSurfacePointSize: 6
     - _WorldPointSize: 4

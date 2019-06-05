@@ -9,12 +9,14 @@ public class FloorDetectionController : MonoBehaviour {
 	// Constants:
 	//-----------------------------------------------------------------------------------------
 
-	private const float DEFAULT_FLOOR_MEASUREMENT_MAX_AGE = 2;
+	private const float DEFAULT_FLOOR_NORMAL_ANGLE_MAX_DELTA = 20;
 	private const float DEFAULT_FLOOR_PLANE_Y_MESHING_ERROR_MARGIN = 0.05f;
+	private const float DEFAULT_FLOOR_MEASUREMENT_MAX_AGE = 2;
 
 	private const float DEFAULT_BOUNDS_SIZE = 10;
 
-	private static readonly int FLOOR_PLANE_GLOBAL_SHADER_PROPERTY = Shader.PropertyToID("_FloorPlane");
+	private static readonly int FLOOR_PLANE_PROPERTY                  = Shader.PropertyToID("_FloorPlane");
+	private static readonly int FLOOR_NORMAL_ANGLE_MAX_DELTA_PROPERTY = Shader.PropertyToID("_FloorNormalAngleMaxDelta");
 
 	//-----------------------------------------------------------------------------------------
 	// Inspector Variables:
@@ -22,14 +24,18 @@ public class FloorDetectionController : MonoBehaviour {
 
 	[Space]
 
-	[Tooltip("Floor measurements are averaged over time. This value determines the duration in seconds that those measurements factor into " +
-	         "our average.")]
-	[SerializeField] protected float floorMeasurementMaxAge = DEFAULT_FLOOR_MEASUREMENT_MAX_AGE;
+	[Tooltip("The maximum angle in degrees between a vertex's normal and the floor plane normal within which the vertex is considered to " +
+	         "belong to the floor, provided it also falls below the " + nameof(FloorY) + " plus the " + nameof(floorPlaneYMeshingErrorMargin))]
+	[SerializeField] protected float floorNormalAngleMaxDelta = DEFAULT_FLOOR_NORMAL_ANGLE_MAX_DELTA;
 
 	[Tooltip("Additional margin used to envelop noise in the spatial map which falls just above the detected floor y but should still be " +
 	         "considered part of the floor. This value is only used with the ML Meshing/Raycast API; the " + nameof(FloorY) + " property of " +
 	         "this component denotes the de facto floor y.")]
 	[SerializeField] protected float floorPlaneYMeshingErrorMargin = DEFAULT_FLOOR_PLANE_Y_MESHING_ERROR_MARGIN;
+
+	[Tooltip("Floor measurements are averaged over time. This value determines the duration in seconds that those measurements factor into " +
+	         "our average.")]
+	[SerializeField] protected float floorMeasurementMaxAge = DEFAULT_FLOOR_MEASUREMENT_MAX_AGE;
 
 	[Space]
 
@@ -47,9 +53,13 @@ public class FloorDetectionController : MonoBehaviour {
 	// Private Fields:
 	//-----------------------------------------------------------------------------------------
 
-	/// <summary>The current plane describing the normal and distance of our working floor plane.</summary>
+	/// <summary>The current Unity <c>Plane</c> describing the normal and distance of our working floor plane.</summary>
 	/// <remarks>This is not to be confused with a Magic Leap Planes API <c>MLWorldPlane</c>.</remarks>
 	private Plane currFloorPlane;
+
+	/// <summary>The previously set <see cref="floorNormalAngleMaxDelta"/>.</summary>
+	/// <remarks>Initialising this to <c>float.NaN</c> ensures we always detect it changing (even to zero) and set it at least once.</remarks>
+	private float prevFloorNormalAngleMaxDelta = float.NaN;
 
 	private readonly Queue<FloatMeasurement> floorYMeasurements = new Queue<FloatMeasurement>();
 
@@ -79,13 +89,19 @@ public class FloorDetectionController : MonoBehaviour {
 		floorPlanePosition.y = FloorY + floorPlaneYMeshingErrorMargin;
 		currFloorPlane = new Plane(transform.up, floorPlanePosition);
 
-		// back out if we don't detect a change in floor plane.
+		// if we detect a change in floor plane...
 		// N.B. frustratingly, at least as of 2019.1.5f1, Unity have yet to implement IEquatable on Planes.
-		if (currFloorPlane.normal == prevFloorPlane.normal && currFloorPlane.distance == prevFloorPlane.distance) return;
+		if (currFloorPlane.normal != prevFloorPlane.normal || currFloorPlane.distance != prevFloorPlane.distance) {
+			
+			// create a Vector4 representation of the plane and pass it into all shaders globally.
+			Vector4 plane = new Vector4(currFloorPlane.normal.x, currFloorPlane.normal.y, currFloorPlane.normal.z, currFloorPlane.distance);
+			Shader.SetGlobalVector(FLOOR_PLANE_PROPERTY, plane);
+		}
 
-		// create a Vector4 representation of the plane and pass it into all shaders globally.
-		Vector4 plane = new Vector4(currFloorPlane.normal.x, currFloorPlane.normal.y, currFloorPlane.normal.z, currFloorPlane.distance);
-		Shader.SetGlobalVector(FLOOR_PLANE_GLOBAL_SHADER_PROPERTY, plane);
+		// if we detect a change in floor normal angle max delta, update global shader value.
+		if (floorNormalAngleMaxDelta == prevFloorNormalAngleMaxDelta) return;
+		Shader.SetGlobalFloat(FLOOR_NORMAL_ANGLE_MAX_DELTA_PROPERTY, floorNormalAngleMaxDelta);
+		prevFloorNormalAngleMaxDelta = floorNormalAngleMaxDelta;
 	}
 
 	//-----------------------------------------------------------------------------------------
