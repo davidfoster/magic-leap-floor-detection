@@ -45,7 +45,7 @@ Shader "David Foster/Spatial Mapping Occlusion (Floor Detection)" {
 				// calculate world position of vertex.
 				float4 worldPos = mul(unity_ObjectToWorld, v.vertex);
 
-				// normalise normals, as the Magic Leap emulator has a bug where it generates floor planes with normal length of 0.01.
+				// normalise normals, as the Magic Leap simulator has a bug where it generates floor meshes with normal length of 0.01.
 				float3 normal = normalize(v.normal);
 
 				// work out the angle delta between our vertex normal and the plane normal.

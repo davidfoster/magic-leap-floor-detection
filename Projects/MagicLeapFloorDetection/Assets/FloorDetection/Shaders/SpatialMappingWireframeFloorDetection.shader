@@ -60,7 +60,7 @@ Shader "David Foster/Spatial Mapping Wireframe (Floor Detection)" {
 				o.projectionSpaceVertex = UnityObjectToClipPos(v.vertex);
 				o.worldSpacePosition = mul(unity_ObjectToWorld, v.vertex);
 
-				// normalise normals, as the Magic Leap emulator has a bug where it generates floor planes with normal length of 0.01.
+				// normalise normals, as the Magic Leap simulator has a bug where it generates floor meshes with normal length of 0.01.
 				o.normal = normalize(v.normal);
 
 				return o;

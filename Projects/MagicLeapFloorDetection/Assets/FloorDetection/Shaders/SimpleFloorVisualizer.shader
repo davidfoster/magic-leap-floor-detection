@@ -43,27 +43,11 @@ Shader "David Foster/Simple Floor Visualizer" {
 				// calculate the position in clip space to render the object.
 				o.position = UnityObjectToClipPos(v.vertex);
 
-				// calculate world position of vertex.
-				float4 worldPos = mul(unity_ObjectToWorld, v.vertex);
-
-				// normalise normals, as the Magic Leap emulator has a bug where it generates floor planes with normal length of 0.01.
-				float3 normal = normalize(v.normal);
-
-				// work out the angle delta between our fragment normal and the plane normal.
-				float floorPlaneNormalDeltaDegrees = degrees(acos(dot(normal, _FloorPlane.xyz)));
-
-				// calculate signed distance to plane, discarding the vertex by dividing by zero if it is below the distance.
-				float distance = dot(worldPos, _FloorPlane.xyz);
-				distance = distance + _FloorPlane.w;
-
-				// N.B. uncomment below to effectively discard this vertex by performing an invalid operation (divide by zero).
-				//o.position /= lerp(1, lerp(1, 0, step(floorPlaneNormalDeltaDegrees, _FloorNormalAngleMaxDelta)), step(distance, 0));
-
 				// figure out world position.
 				o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
-
-				// pass through normal.
-				o.normal = normal;
+				
+				// normalise normals, as the Magic Leap simulator has a bug where it generates floor meshes with normal length of 0.01.
+				o.normal = normalize(v.normal);
 				return o;
 			}
 

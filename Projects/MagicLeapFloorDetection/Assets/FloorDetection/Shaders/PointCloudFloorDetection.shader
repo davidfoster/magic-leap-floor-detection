@@ -55,7 +55,7 @@ Shader "David Foster/Point Cloud (Floor Detection)" {
 				// calculate world position of vertex.
 				float4 worldPos = mul(unity_ObjectToWorld, v.vertex);
 
-				// normalise normals, as the Magic Leap emulator has a bug where it generates floor planes with normal length of 0.01.
+				// normalise normals, as the Magic Leap simulator has a bug where it generates floor meshes with normal length of 0.01.
 				float3 normal = normalize(v.normal);
 
 				// work out the angle delta between our fragment normal and the plane normal.
@@ -70,9 +70,6 @@ Shader "David Foster/Point Cloud (Floor Detection)" {
 
 				// figure out world position.
 				o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
-
-				// pass through normal.
-				o.normal = normal;
 
 				// pass through normal.
 				o.normal = normal;

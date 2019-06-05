@@ -21,7 +21,9 @@ Material:
     m_TexEnvs: []
     m_Floats:
     - _FloorNormalAngleMaxDelta: 20
-    - _PointSize: 5
+    - _FloorPointSize: 10
+    - _HorizontalSurfacePointSize: 6
+    - _WorldPointSize: 4
     m_Colors:
     - _FloorColour: {r: 0, g: 1, b: 0, a: 1}
     - _HorizontalSurfaceColour: {r: 1, g: 1, b: 0, a: 1}
