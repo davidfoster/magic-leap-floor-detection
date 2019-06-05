@@ -119,20 +119,6 @@ Shader "David Foster/Spatial Mapping Wireframe (Floor Detection)" {
 				// smooth our line out.
 				float t = exp2(-2 * minDistanceToEdge * minDistanceToEdge);
 
-				const fixed4 colors[11] = {
-					fixed4(1.0, 1.0, 1.0, 1.0),  // white.
-					fixed4(1.0, 0.0, 0.0, 1.0),  // red.
-					fixed4(0.0, 1.0, 0.0, 1.0),  // green.
-					fixed4(0.0, 0.0, 1.0, 1.0),  // blue.
-					fixed4(1.0, 1.0, 0.0, 1.0),  // yellow.
-					fixed4(0.0, 1.0, 1.0, 1.0),  // cyan/aqua.
-					fixed4(1.0, 0.0, 1.0, 1.0),  // magenta.
-					fixed4(0.5, 0.0, 0.0, 1.0),  // maroon.
-					fixed4(0.0, 0.5, 0.5, 1.0),  // teal.
-					fixed4(1.0, 0.65, 0.0, 1.0), // orange.
-					fixed4(1.0, 1.0, 1.0, 1.0)   // white.
-				};
-				
 				// work out the angle delta between our fragment normal and the plane normal.
 				float floorPlaneNormalDeltaDegrees = degrees(acos(dot(i.normal, _FloorPlane.xyz)));
 
