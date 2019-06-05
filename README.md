@@ -58,6 +58,7 @@ N.B. aforementioned vertex discarding is purely visual; floor mesh colliders are
 
 * This implementation is naive in that it necessarily assumes that the floor has uniform surface tangents and a consistent vertical position. This approach will work well in most situations (even situations where the floor is uneven but averages out well) but will fail in some such as near stairs or on sloped surfaces.
    * One approach to remedy this limitation is to scattergun ML Raycast API calls and construct a new mesh based on smoothed contact points, then pass this into each shader. That said, at least in my investigations, relying solely on Raycast/Meshing APIs for floor position will lead to small error drifts above actual floor position.
+      * Even using this alternative approach, it is not trivial to discern between ascending stair steps (which would be considered part of the floor) versus a series of near-laterally-contiguous ascending horizontal surfaces like a foot rest (or worse, a step ladder), a chair, and a table.
 
 ## License
 
