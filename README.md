@@ -46,6 +46,10 @@ Vertex 'discarding' is done in the vertex program by performing an invalid opera
 
 <img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/Examples/spatial-mapper-meshing-occlusion-example.png" alt="Spatial Mapper Meshing Occlusion." width="392" height="294" />
 
+## Gotchas
+
+At least as of Lumin SDK v0.20.0, and when using ML Remote Simulator, floor meshes in particular come in with vertices whose normal magnitude is `0.01`. We can easily account for this (and have) in each shader but it adds an extra `normalize` operation and, consequently, a square root. Although [square roots are two orders of magnitude faster GPU-side](http://supercomputingblog.com/cuda/performance-of-sqrt-in-cuda/), I'll keep an eye on updates to the Lumin SDK which might render this operation redundant. A bug report has been filed with Magic Leap.
+
 ## License
 
 This project is licensed under the [MIT license](https://github.com/davidfoster/magic-leap-floor-detection/blob/develop/LICENSE).
