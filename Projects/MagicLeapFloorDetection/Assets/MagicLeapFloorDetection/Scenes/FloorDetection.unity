@@ -867,7 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxPlaneCount: 512
-  SemanticFlags: 960
+  SemanticFlags: 128
   OrientationFlags: 7
   MinPlaneArea: 0.04
   InnerPlanes: 1
