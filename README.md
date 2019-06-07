@@ -16,8 +16,8 @@ All Magic Leap code and content is .gitignored so as to abide by the terms of th
 
 To use this example, either (in order of simplicity):
 
-1. Import [MagicLeapFloorDetection.unitypackage](https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.5/Packages/MagicLeapFloorDetection.unitypackage) into an existing ML Unity project.
-2. Import the ML Unity package included with the SDK into the project under [_Projects/MagicLeapFloorDetection_](https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.5/Projects/MagicLeapFloorDetection), then import ML Remote support libraries ("_Magic Leap > ML Remote > Import Support Libraries_" menu item inside of Unity).
+1. Import [MagicLeapFloorDetection.unitypackage](https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.6/Packages/MagicLeapFloorDetection.unitypackage) into an existing ML Unity project.
+2. Import the ML Unity package included with the SDK into the project under [_Projects/MagicLeapFloorDetection_](https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.6/Projects/MagicLeapFloorDetection), then import ML Remote support libraries ("_Magic Leap > ML Remote > Import Support Libraries_" menu item inside of Unity).
    * Make sure the Lumin platform is active in Build Settings or you will receive a "No ML VRDevice loaded" error.
 
 Finally, in either case, make sure you have a _manifest.xml_ under _Plugins/Lumin_ which requests **LowLatencyLightwear** and **WorldReconstruction** privileges, otherwise you will receive a "MLWorldPlanes MLResult_UnspecifiedFailure" error.
@@ -30,15 +30,15 @@ By default, the degree delta is `20`° and the floor normal is world `Vector3.up
 
 ### Simple Floor Visualizer
 
-<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.5/Examples/simple-floor-visualizer-example.png" alt="Simple Floor Visualizer." width="392" height="294" />
+<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.6/Examples/simple-floor-visualizer-example.png" alt="Simple Floor Visualizer." width="392" height="294" />
 
 ### Spatial Mapper Meshing Wireframe
 
-<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.5/Examples/spatial-mapper-meshing-wireframe-example.png" alt="Spatial Mapper Meshing Wireframe." width="392" height="294" />
+<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.6/Examples/spatial-mapper-meshing-wireframe-example.png" alt="Spatial Mapper Meshing Wireframe." width="392" height="294" />
 
 ### Spatial Mapper Meshing Point Cloud
 
-<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.5/Examples/spatial-mapper-meshing-point-cloud-example.png" alt="Spatial Mapper Meshing Point Cloud." width="392" height="294" />
+<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.6/Examples/spatial-mapper-meshing-point-cloud-example.png" alt="Spatial Mapper Meshing Point Cloud." width="392" height="294" />
 
 ### Spatial Mapper Meshing Occlusion
 
@@ -46,7 +46,7 @@ In this example, the spatial mapper meshing visualizer is not rendering green. T
 
 Vertex 'discarding' is done in the vertex program by performing an invalid operation on the vertex position (division by zero). This behaviour is undefined but works in OpenGL ES and OpenGL Core and is much more performant than a true `discard` in the fragment program because it avoids a branching operation.
 
-<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.5/Examples/spatial-mapper-meshing-occlusion-example.png" alt="Spatial Mapper Meshing Occlusion." width="392" height="294" />
+<img src="https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.6/Examples/spatial-mapper-meshing-occlusion-example.png" alt="Spatial Mapper Meshing Occlusion." width="392" height="294" />
 
 N.B. aforementioned vertex discarding is purely visual; floor mesh colliders are present despite floor occlusion not rendering.
 
@@ -64,4 +64,4 @@ N.B. aforementioned vertex discarding is purely visual; floor mesh colliders are
 
 ## License
 
-This project is licensed under the [MIT license](https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.5/LICENSE).
+This project is licensed under the [MIT license](https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.6/LICENSE).
