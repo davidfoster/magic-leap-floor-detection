@@ -20,6 +20,8 @@ To use this example, either (in order of simplicity):
 2. Import the ML Unity package included with the SDK into the project under [_Projects/MagicLeapFloorDetection_](https://github.com/davidfoster/magic-leap-floor-detection/blob/v1.0.5/Projects/MagicLeapFloorDetection), then import ML Remote support libraries ("_Magic Leap > ML Remote > Import Support Libraries_" menu item inside of Unity).
    * Make sure the Lumin platform is active in Build Settings or you will receive a "No ML VRDevice loaded" error.
 
+Finally, make sure you have a _manifest.xml_ under _Plugins/Lumin_ which requests **LowLatencyLightwear** and **WorldReconstruction** privileges.
+
 ## Examples
 
 In these examples, vertices are rendered in yellow whose normals fall within a specified degree delta of the floor normal. Of those vertices, those who fall below the detected floor `position.y` are considered to be a part of the floor, and are rendered in green.
