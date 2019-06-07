@@ -60,7 +60,7 @@ Shader "David Foster/Point Cloud (Floor Detection)" {
 				// work out the angle delta between our fragment normal and the plane normal.
 				float floorPlaneNormalDeltaDegrees = degrees(acos(dot(normal, _FloorPlane.xyz)));
 
-				// calculate signed distance to plane, discarding the vertex by dividing by zero if it is below the distance.
+				// calculate signed distance to plane.
 				float distance = dot(worldPos, _FloorPlane.xyz);
 				distance = distance + _FloorPlane.w;
 
