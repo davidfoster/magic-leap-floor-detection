@@ -20,7 +20,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _FloorNormalAngleMaxDelta: 20
     - _WireThickness: 100
     m_Colors:
     - _FloorColour: {r: 0, g: 1, b: 0, a: 1}

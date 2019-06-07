@@ -4,7 +4,6 @@ Shader "David Foster/Spatial Mapping Wireframe (Floor Detection)" {
 		_WorldColour("World Colour", Color) = (0.5, 0.5, 0.5, 1)
 		_HorizontalSurfaceColour("Horizontal Surface Colour", Color) = (1, 1, 0, 1)
 		_FloorColour("Floor Colour", Color) = (0, 1, 0, 1)
-		_FloorNormalAngleMaxDelta("Floor Normal Angle Max Delta", Range(0, 90)) = 20
 	}
 
 	SubShader {
@@ -27,10 +26,9 @@ Shader "David Foster/Spatial Mapping Wireframe (Floor Detection)" {
 			uniform float4 _HorizontalSurfaceColour;
 			uniform float4 _FloorColour;
 
-			uniform float _FloorNormalAngleMaxDelta;
-
-			// global floor plane property.
+			// global floor plane and normal properties.
 			uniform float4 _FloorPlane;
+			uniform float  _FloorNormalAngleMaxDelta;
 
 			struct appdata {
 				float4 vertex : POSITION;
@@ -120,7 +118,7 @@ Shader "David Foster/Spatial Mapping Wireframe (Floor Detection)" {
 
 				// smooth our line out.
 				float t = exp2(-2 * minDistanceToEdge * minDistanceToEdge);
-				
+
 				// work out the angle delta between our fragment normal and the plane normal.
 				float floorPlaneNormalDeltaDegrees = degrees(acos(dot(i.normal, _FloorPlane.xyz)));
 

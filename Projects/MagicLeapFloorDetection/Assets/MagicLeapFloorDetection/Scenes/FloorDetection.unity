@@ -530,12 +530,12 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114179439577410040, guid: 3aae518756c7a3c46bf2b24558dc5b77,
+    - target: {fileID: 114366043123998692, guid: 3aae518756c7a3c46bf2b24558dc5b77,
         type: 3}
       propertyPath: _controllerConnectionHandler
       value: 
       objectReference: {fileID: 1747550480}
-    - target: {fileID: 114366043123998692, guid: 3aae518756c7a3c46bf2b24558dc5b77,
+    - target: {fileID: 114179439577410040, guid: 3aae518756c7a3c46bf2b24558dc5b77,
         type: 3}
       propertyPath: _controllerConnectionHandler
       value: 
@@ -850,8 +850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac0ee63d542270479d0d0e2e3e9fec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floorNormalAngleMaxDelta: 20
+  floorPlaneYMeshingErrorMargin: 0.05
   floorMeasurementMaxAge: 2
-  floorPlaneYShaderErrorMargin: 0.05
   boundsSize: 10
 --- !u!114 &1565771243
 MonoBehaviour:
@@ -866,7 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxPlaneCount: 512
-  SemanticFlags: 128
+  SemanticFlags: 960
   OrientationFlags: 7
   MinPlaneArea: 0.04
   InnerPlanes: 1

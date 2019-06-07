@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OcclusionFloorDetection
-  m_Shader: {fileID: 4800000, guid: 8e0c46e5a876a2844b0b2e220882280d, type: 3}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_Name: PointCloudFloorDetection
+  m_Shader: {fileID: 4800000, guid: a2e4442ee5911d74b9ba6cd6400e4117, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -20,5 +20,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _FloorNormalAngleMaxDelta: 20
-    m_Colors: []
+    - _FloorPointSize: 10
+    - _HorizontalSurfacePointSize: 6
+    - _WorldPointSize: 4
+    m_Colors:
+    - _FloorColour: {r: 0, g: 1, b: 0, a: 1}
+    - _HorizontalSurfaceColour: {r: 1, g: 1, b: 0, a: 1}
+    - _WorldColour: {r: 0.5, g: 0.5, b: 0.5, a: 1}

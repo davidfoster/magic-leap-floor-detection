@@ -1,8 +1,4 @@
 Shader "David Foster/Spatial Mapping Occlusion (Floor Detection)" {
-	Properties {
-		_FloorNormalAngleMaxDelta("Floor Normal Angle Max Delta", Range(0, 90)) = 20
-	}
-
 	SubShader {
 
 		// render the Occlusion shader before all opaque geometry to prime the depth buffer.
@@ -19,10 +15,9 @@ Shader "David Foster/Spatial Mapping Occlusion (Floor Detection)" {
 
 			#include "UnityCG.cginc"
 
-			uniform float _FloorNormalAngleMaxDelta;
-
-			// global floor plane property.
+			// global floor plane and normal properties.
 			uniform float4 _FloorPlane;
+			uniform float  _FloorNormalAngleMaxDelta;
 
 			struct appdata {
 				float4 vertex : POSITION;
