@@ -27,16 +27,16 @@ namespace MagicLeapFloorDetection {
 		[Space]
 
 		[Tooltip("The maximum angle in degrees between a vertex's normal and the floor plane normal within which the vertex is considered to " +
-				 "belong to the floor, provided it also falls below the " + nameof(FloorY) + " plus the " + nameof(floorPlaneYMeshingErrorMargin))]
+		         "belong to the floor, provided it also falls below the " + nameof(FloorY) + " plus the " + nameof(floorPlaneYMeshingErrorMargin))]
 		[SerializeField] protected float floorNormalAngleMaxDelta = DEFAULT_FLOOR_NORMAL_ANGLE_MAX_DELTA;
 
 		[Tooltip("Additional margin used to envelop noise in the spatial map which falls just above the detected floor y but should still be " +
-				 "considered part of the floor. This value is only used with the ML Meshing/Raycast API; the " + nameof(FloorY) + " property of " +
-				 "this component denotes the de facto floor y.")]
+		         "considered part of the floor. This value is only used with the ML Meshing/Raycast API; the " + nameof(FloorY) + " property of " +
+		         "this component denotes the de facto floor y.")]
 		[SerializeField] protected float floorPlaneYMeshingErrorMargin = DEFAULT_FLOOR_PLANE_Y_MESHING_ERROR_MARGIN;
 
 		[Tooltip("Floor measurements are averaged over time. This value determines the duration in seconds that those measurements factor into " +
-				 "our average.")]
+		         "our average.")]
 		[SerializeField] protected float floorMeasurementMaxAge = DEFAULT_FLOOR_MEASUREMENT_MAX_AGE;
 
 		[Space]
